@@ -19,7 +19,16 @@
                             <td>
                                 {{pr.displayName}}                        
                             </td>
+                            <td>
+                                <div class="col-sm-12">
+                                    <select class="hideInPrint" ng-model="selectedProgramStage" ng-options="stage.id as stage.displayName for stage in programStages" style="background-color: #fff; border: 1px solid #ccc; color: #333; padding: 5px; font-size: 14px;">
+                                        <option value="">Select Program Stage</option>
+                                    </select>
+                                </div>
+                                    
+                            </td>
                         </tr>
+               
                     </table>
                     <div ng-if="showProgramReportDetailsDiv[pr.id]">     
                         <div ng-class="printable" ng-include="'components/report/program-details.html'"></div>             

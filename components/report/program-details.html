@@ -59,13 +59,7 @@
             </div>
 
             <h2 class='col-sm-12'>{{'visits'| translate}}</h2>
-
-            <div class="col-sm-12">
-            <select class="hideInPrint" ng-model="selectedProgramStage" ng-options="stage.id as stage.displayName for stage in programStages" style="background-color: #fff; border: 1px solid #ccc; color: #333; padding: 5px; font-size: 14px;">
-                <option value="">Select Program Stage</option>
-            </select>
-            </div>
-
+            
             <div ng-repeat="programStage in programStages | orderBy:'sortOrder':reverse">
                 <div class='vertical-spacing' ng-repeat="dhis2Event in selectedReport.enrollments[enrollment.enrollment]| orderBy:'sortingDate':reverse | filter:{programStage:programStage.id}" ng-if="!selectedProgramStage || programStage.id === selectedProgramStage">
                     <div class="col-sm-3">
