@@ -181,12 +181,14 @@ trackerCapture.controller('TeiReportController',
         $scope.enrollments = enrollments;
     };
     
-    $scope.close = function(){
-        $scope.showProgramReportDetailsDiv = false;
+    $scope.close = function(pr){
+        // $scope.showProgramReportDetailsDiv = false;
+        $scope.toggleProgramReportDetails(pr);
     };
     
-    $scope.print = function(divName){
-        $scope.showProgramReportDetailsDiv = false;
+    $scope.print = function(pr,divName){
+        // $scope.showProgramReportDetailsDiv = false;
+        $scope.toggleProgramReportDetails(pr);
         var printContents = document.getElementById(divName).innerHTML;
         var popupWin = window.open('', '_blank', 'fullscreen=1');
         popupWin.document.open();
