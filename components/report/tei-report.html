@@ -15,8 +15,8 @@
             <div ng-if="dataExists" class="remove-default-padding hideInPrint">
                 <div ng-repeat="pr in programs" ng-if="report[pr.id].enrollments">
                     <table class="table table-striped dhis2-table-hover">
-                        <tr ng-click="toggleProgramReportDetails(pr)" title="{{'details'| translate}}">                   
-                            <td>
+                        <tr  title="{{'details'| translate}}">                   
+                            <td ng-click="toggleProgramReportDetails(pr)">
                                 {{pr.displayName}}                        
                             </td>
                             <td>
